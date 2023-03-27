@@ -4,11 +4,9 @@ Syffle is a LISP dialect, highly compatible with Python that is going to receive
 # Installation
 make sure that you have the latest Python & PIP installed. install the `requests`, `jdatetime` & `pytz` PIP packages.
 
-depending on your operating system. either install the `windows.exe` or `linux` binaries from this repository. `windows.exe` has been tested on Windows 11 & `linux` on Ubuntu 20.04 LTS.
+then clone this repository & either use `python3 src/main.py` or `python src/main.py` based on your operating system.
 
-it is recommended to add the binaries into the PATH, after downloading & don't forget to change the name from `windows.exe`/`linux` into `syffle.exe`/`syffle`.
-
-the binary will open the interpreter, if no command-line argument is provided. the binary expects a file.syf as its argument. `--version` is also permitted.
+it will open the interpreter, if no command-line argument is provided. it expects a file.syf as its argument. `--version` is also permitted.
 
 # Basics
 the language is made out of atoms & function calls. unlike some LISP dialects like Clojure, there is no other special syntax & it's just simple LISP.
