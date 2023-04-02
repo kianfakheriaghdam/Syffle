@@ -167,13 +167,11 @@ with the current knowledge, lets make a fork of the `while` & `for` macros. noti
 ```racket
 (define tkinter (py/import "tkinter"))
 
-(define tk (py/. tkinter "Tk"))
-
-(define root (tk))
+(define root ((py/. tkinter "Tk")))
 ((py/. root "title") "Hello, world!")
 ((py/. root "geometry") "300x200")
 
-((py/, root "mainloop"))
+((py/. root "mainloop"))
 ```
 
 # Standard Library
