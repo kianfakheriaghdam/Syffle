@@ -192,10 +192,13 @@ def script(name, alias):
     except FileNotFoundError:
         raise Exception(f'couldn\'t open file - {name}')
 
+    updated_std = {key: value for key, value in local.items() if key in std and std[key] is not local[key]}
+    updated_std = {key: value for key, value in std.items() if key not in updated_std}
+
     if alias == '*':
-        return {key: value for key, value in local.items() if key not in std}
+        return {key: value for key, value in local.items() if key not in updated_std}
     else:
-        return {alias+'/'+key: value for key, value in local.items() if key not in std}
+        return {alias+'/'+key: value for key, value in local.items() if key not in updated_std}
 
 # BOOTSTRAP
 def bootstrap():
@@ -226,5 +229,5 @@ def bootstrap():
     ;;     (let ((macro/~ b) (macro/~ p))
     ;;         (macro/~@ when p c))))"""
 
-    for index, expr in enumerate(split_balanced(uncomment(source))):
+    for expr in split_balanced(uncomment(source)):
         evaluate(read(expr))
