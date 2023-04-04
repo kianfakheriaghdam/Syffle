@@ -16,7 +16,8 @@ from evaluate import bootstrap
 bootstrap()
 
 # READ, EVALUATE, PRINT & LOOP
-import readline
+if sys.platform != 'win32':
+    import readline
 
 def repl():
     while True:
