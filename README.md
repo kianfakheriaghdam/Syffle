@@ -1,4 +1,4 @@
-# Syffle
+# Syffle - Simple Yet Fundamentally Fantastic Language Extended
 Syffle is a LISP dialect, highly compatible with Python that is going to receive proper documentation & icon one day.
 
 # Installation
